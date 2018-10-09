@@ -100,6 +100,8 @@ JavaScript 是单线程的语言, 但是 JS-Interpreter 允许同时运行多个
 
 稍微复杂的情况是两个或多个线程想要共享相同全局作用域. 要实现这一点, 1)创建一个JS-Interpreter, 2)创建一个单独的堆栈列表, 3)将每个堆栈的根节点的`.scope`属性分配给 interpreter 的 `.global`属性, 4)然后将所需的堆栈分配给调用 step 之前interpreter的 `stateStack` 属性.  
 
+这里有一个例子: [tread demo](https://neil.fraser.name/software/JS-Interpreter/demos/thread.html)
+
 ## 限制
 interpreter 实现的 JavaScript 版本与在浏览器中执行的版本略有不同
 - API
@@ -125,6 +127,5 @@ interpreter 并不是十分快, 它大概比原生 JS 慢 200 倍
 - Opera 11.6
 - Safari 5
 
-## 弃用
-
+## 免责声明
 这个并不是 Google 官方的产品
